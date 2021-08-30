@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_counter">
+
+    <fragment
+        android:id="@+id/nav_counter"
+        android:name="com.example.carbcounter.ui.CounterFragment"
+        android:label="Carb Counter"
+        tools:layout="@layout/fragment_counter" />
+
+    <fragment
+        android:id="@+id/nav_editdb"
+        android:name="com.example.carbcounter.ui.EditDbFragment"
+        android:label="Edit Database"
+        tools:layout="@layout/fragment_editdb" />
+</navigation>

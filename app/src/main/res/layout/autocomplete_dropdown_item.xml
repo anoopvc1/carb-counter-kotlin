@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:gravity="center_vertical"
+    android:marqueeRepeatLimit="marquee_forever"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:paddingStart="14dp"
+    android:paddingEnd="15dp"
+    android:scrollHorizontally="true"
+    android:text="Vermicelli"
+    android:background="#5F676E"
+    android:textColor="#FFFFFF"
+    android:textAppearance="?android:attr/textAppearanceSmall"/>
