@@ -1,5 +1,6 @@
 package com.example.carbcounter.ui
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -13,7 +14,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.carbcounter.IngredientViewModel
 import com.example.carbcounter.R
-import com.example.carbcounter.data.Ingredient
 import com.example.carbcounter.databinding.FragmentCounterBinding
 import com.google.android.material.card.MaterialCardView
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,8 +26,7 @@ class CounterFragment : Fragment() {
     private var ingredients = mutableMapOf<String, String>()
     private val viewModel: IngredientViewModel by activityViewModels()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
     private var row = 0
     private lateinit var rowHolderLinLayout: LinearLayout
@@ -45,21 +44,21 @@ class CounterFragment : Fragment() {
         val root: View = binding.root
         rowHolderLinLayout = binding.itemParent
         createRow()
-        //alert dialog code - create dialog fragment similar to this
-        /*AlertDialog mdb = new MaterialAlertDialogBuilder(this)
-            .setTitle("WELCOME TO CARB COUNTER")
-            .setMessage("Doing this will remove the error but not get him to where he wants to be which is an activity with a dialog theme. The general rule is that if you want your activity to have an action bar it should have the AppCompat theme and the java code should extend ActionBarActivity. If you have an activity that doesn't need an action bar (like a dialog themed activity) you can apply any theme to it but the java code must extend plain old activity")
-            .setNeutralButton("DISMISS", (dialog, which) -> Log.d("tag", "msg"))
-        .setPositiveButton("AGREE", (dialog, which) -> Log.d("tag", "msg"))
-        .create();
-        mdb.show();
-        mdb.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);*/
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //About the app & Terms. Check if the terms have been agreed
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        //sharedPref!!.edit().clear().apply()
+        if (!sharedPref!!.getBoolean("TERMS", false))
+            AboutFragment().show(childFragmentManager, AboutFragment.TAG)
+
+        //add rows
         binding.fab.setOnClickListener { createRow() }
+
         viewModel.ingredients.observe(viewLifecycleOwner, Observer {
             //optimize this part later
             ingredients.clear()

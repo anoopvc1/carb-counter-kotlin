@@ -12,5 +12,9 @@
             android:id="@+id/nav_editdb"
             android:icon="@drawable/ic_menu_edit_db"
             android:title="Edit Database" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_menu_about"
+            android:title="About" />
     </group>
 </menu>

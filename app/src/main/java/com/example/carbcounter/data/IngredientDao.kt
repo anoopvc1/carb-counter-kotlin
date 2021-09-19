@@ -9,8 +9,11 @@ interface IngredientDao {
     @Query("SELECT * FROM ingredient_table ORDER BY ingredientName ASC")
     fun getAll(): Flow<List<Ingredient>>
 
-    @Insert(entity = Ingredient::class, onConflict = OnConflictStrategy.REPLACE)
+    @Insert(entity = Ingredient::class, onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(ingredient: Ingredient)
+
+    @Update(entity = Ingredient::class)
+    suspend fun update(ingredient: Ingredient)
 
     @Delete(entity = Ingredient::class)
     suspend fun delete(ingredient: Ingredient)

@@ -13,6 +13,10 @@ class IngredientRepository @Inject constructor(private val dao: IngredientDao) {
         dao.insert(ingredient)
     }
 
+    suspend fun update(ingredient: Ingredient) {
+        dao.update(ingredient)
+    }
+
     suspend fun delete(ingredient: Ingredient) {
         dao.delete(ingredient)
     }

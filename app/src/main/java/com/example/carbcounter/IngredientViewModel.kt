@@ -17,6 +17,8 @@ class IngredientViewModel @Inject constructor(private val repository: Ingredient
 
     fun insert(ingredient: Ingredient) = viewModelScope.launch { repository.insert(ingredient) }
 
+    fun update(ingredient: Ingredient) = viewModelScope.launch { repository.update(ingredient) }
+
     fun delete(ingredient: Ingredient) = viewModelScope.launch { repository.delete(ingredient) }
 }
 

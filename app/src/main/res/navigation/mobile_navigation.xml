@@ -16,4 +16,8 @@
         android:name="com.example.carbcounter.ui.EditDbFragment"
         android:label="Edit Database"
         tools:layout="@layout/fragment_editdb" />
+
+    <dialog
+        android:id="@+id/nav_about"
+        android:name="com.example.carbcounter.ui.AboutFragment" />
 </navigation>
