@@ -18,6 +18,4 @@ New ingredients, dishes or meals can be added as suited
 
 <img src="https://user-images.githubusercontent.com/40061860/151547231-0d196e84-20d0-4636-8d76-b33bb688b169.jpg" width="200" height="270"/><img src="https://user-images.githubusercontent.com/40061860/151547220-e559d308-1beb-45a1-a900-0088e355cdc4.jpg" width="200" height="270"/><img src="https://user-images.githubusercontent.com/40061860/151547226-c6c72163-2eb1-4b0e-a613-1c90f7906215.jpg" width="200" height="270"/>
 
-**Development process**
-
 **About the developer**
